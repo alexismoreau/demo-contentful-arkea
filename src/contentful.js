@@ -7,8 +7,8 @@ if(!import.meta.env.VITE_CONTENTFUL_SPACE_ID || !import.meta.env.VITE_CONTENTFUL
 const client = createClient({
   space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
   accessToken: import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN,
-  environment: 'master',
-  host: 'preview.contentful.com'
+  environment: import.meta.env.VITE_CONTENTFUL_ENVIRONMENT,
+  host: import.meta.env.VITE_CONTENTFUL_HOST,
 });
 
 export default client;

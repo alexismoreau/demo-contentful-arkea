@@ -2,14 +2,15 @@
   "name": "contentful-vue-demo",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
+  "type": "commonjs",
   "engines": {
     "node": ">=22.12.0"
   },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "contentful-gen-types": "contentful-typescript-codegen --output src/lib/contentful.d.ts"
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^17.1.1",
@@ -19,6 +20,10 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
+    "contentful-management": "^11.54.4",
+    "contentful-typescript-codegen": "^3.4.0",
+    "dotenv": "^17.2.2",
+    "ts-node": "^10.9.2",
     "vite": "^7.0.6",
     "vite-plugin-vue-devtools": "^8.0.0"
   }
