@@ -5,12 +5,6 @@
       <p>A demo showing how to fetch and display content from Contentful using tags, locales and differents countries.</p>
     </header>
 
-    <div class="filters">
-      <button @click="setFilter('all')" :class="{ active: activeFilter === 'all' }">All</button>
-      <button @click="setFilter('fr')" :class="{ active: activeFilter === 'fr' }">France</button>
-      <button @click="setFilter('uk')" :class="{ active: activeFilter === 'uk' }">UK</button>
-    </div>
-
     <main>
       <div v-if="loading" class="loading">Loading posts...</div>
       <div v-else-if="error" class="error">{{ error }}</div>
@@ -35,7 +29,7 @@ import { store } from '../store';
 const props = defineProps({
   website: {
     type: String,
-    default: 'arkea',
+    default: '',
   },
 });
 
@@ -49,18 +43,16 @@ const fetchPosts = async () => {
     loading.value = true;
     const query = {
       content_type: 'blogPost',
-      order: '-sys.createdAt',
+      order: '-fields.website',
       locale: store.locale,
-      'metadata.tags.sys.id[in]': ['common', props.website],
+      'fields.website[in]': ['0common', props.website],
+      // limit: 1,
     };
-
-    if (activeFilter.value !== 'all') {
-      query['metadata.tags.sys.id[in]'].push(activeFilter.value);
-    }
 
     const response = await contentfulClient.getEntries(query);
 
     posts.value = response.items;
+    console.log({ items: response.items });
   } catch (err) {
     console.error('Error fetching posts:', err);
     error.value = 'Failed to load posts. Check your Contentful configuration and tags.';

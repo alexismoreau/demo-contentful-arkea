@@ -1,6 +1,7 @@
 <template>
   <nav class="blog-switcher">
-    <router-link to="/">Arkea Blog</router-link>
+    <router-link to="/">Common Blog</router-link>
+    <router-link to="/arkea">Arkea Blog</router-link>
     <router-link to="/harley">Harley's Blog</router-link>
   </nav>
 </template>

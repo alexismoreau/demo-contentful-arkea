@@ -5,7 +5,15 @@ import BlogPost from '../components/BlogPost.vue';
 const routes = [
   {
     path: '/',
-    name: 'Blog',
+    name: 'Common',
+    props: {
+      website: '0common',
+    },
+    component: PostList,
+  },
+  {
+    path: '/arkea',
+    name: "Arkea's blog",
     props: {
       website: 'arkea',
     },
