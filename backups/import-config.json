@@ -1,0 +1,8 @@
+{
+    "spaceId": "kshk1kpa0b3y",
+    "managementToken": "",
+    "environmentId": "test-import-09-09",
+    "contentFile": "./backups/result.json",
+    "skipContentModel": false,
+    "skipAssetUpdates": false
+}

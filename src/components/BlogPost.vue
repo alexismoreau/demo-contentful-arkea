@@ -24,7 +24,7 @@ const fetchPost = async (id) => {
   try {
     loading.value = true;
     error.value = null;
-        const response = await contentfulClient.getEntry(id, { locale: store.locale });
+    const response = await contentfulClient.getEntry(id, { locale: store.locale });
     post.value = response;
   } catch (err) {
     console.error('Error fetching post:', err);

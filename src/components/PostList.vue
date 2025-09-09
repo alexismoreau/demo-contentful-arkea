@@ -51,14 +51,15 @@ const fetchPosts = async () => {
       content_type: 'blogPost',
       order: '-sys.createdAt',
       locale: store.locale,
-      'metadata.tags.sys.id[all]': [props.website],
+      'metadata.tags.sys.id[in]': ['common', props.website],
     };
 
     if (activeFilter.value !== 'all') {
-      query['metadata.tags.sys.id[all]'].push(activeFilter.value);
+      query['metadata.tags.sys.id[in]'].push(activeFilter.value);
     }
 
     const response = await contentfulClient.getEntries(query);
+
     posts.value = response.items;
   } catch (err) {
     console.error('Error fetching posts:', err);

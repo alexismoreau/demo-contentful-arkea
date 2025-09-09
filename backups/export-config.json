@@ -1,0 +1,25 @@
+{
+    "spaceId": "kshk1kpa0b3y",
+    "environmentId": "master",
+    "managementToken": "",
+    "exportDir": "./backups",
+    "contentFile": "result.json",
+    "saveFile": true,
+    "includeDrafts": true,
+    "includeArchived": true,
+    "skipContentModel": false,
+    "skipContent": false,
+    "skipRoles": false,
+    "skipTags": false,
+    "skipWebhooks": false,
+    "stripTags": false,
+    "contentOnly": false,
+    "queryEntries": [],
+    "queryAssets": [],
+    "downloadAssets": true,
+    "host": "api.contentful.com",
+    "useVerboseRenderer": false,
+    "timeout": 20000,
+    "retryLimit": 10
+  }
+  

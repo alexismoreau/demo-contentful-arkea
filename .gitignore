@@ -30,3 +30,7 @@ coverage
 *.tsbuildinfo
 
 .env
+
+backups/images.ctfassets.net/
+backups/result.json
+
