@@ -7,7 +7,7 @@ const routes = [
     path: '/',
     name: 'Common',
     props: {
-      website: '0common',
+      website: '.common',
     },
     component: PostList,
   },

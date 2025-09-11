@@ -45,7 +45,7 @@ const fetchPosts = async () => {
       content_type: 'blogPost',
       order: '-fields.website',
       locale: store.locale,
-      'fields.website[in]': ['0common', props.website],
+      'fields.website[in]': ['.common', props.website],
       // limit: 1,
     };
 
